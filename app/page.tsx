@@ -8,36 +8,47 @@ export default function Home() {
   const negotiations = getScenariosByType('negotiation');
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50">
       {/* Header - стиль ITSM365 с точными цветами */}
-      <header className="bg-white border-b border-gray-200">
+      <header className="bg-white/80 backdrop-blur-lg border-b border-purple-100 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-[#2563EB] rounded-lg flex items-center justify-center">
+            <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+              <div className="relative">
+                <div className="w-12 h-12 rounded-xl itsm-gradient flex items-center justify-center shadow-lg pulse-glow">
                   <span className="text-white font-bold text-lg">IT</span>
                 </div>
-                <div>
-                  <h1 className="text-xl font-bold text-[#1F2937]">ITSM 365</h1>
-                  <p className="text-xs text-[#6B7280]">Экосистема продуктов</p>
-                </div>
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-gradient-to-r from-pink-400 to-purple-600 rounded-full animate-ping"></div>
               </div>
-              <div className="hidden md:flex items-center space-x-1 ml-6">
-                <span className="px-3 py-1 text-xs font-medium text-[#2563EB] bg-blue-50 rounded">SUPPORT</span>
-                <span className="px-3 py-1 text-xs font-medium text-[#1F2937] bg-gray-100 rounded">OUTSOURCE</span>
-                <span className="px-3 py-1 text-xs font-medium text-[#1F2937] bg-gray-100 rounded">PROJECTS</span>
-                <span className="px-3 py-1 text-xs font-medium text-[#1F2937] bg-gray-100 rounded">HR</span>
+              <div>
+                <h1 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  ITSM 365
+                </h1>
+                <p className="text-xs text-gray-500">Экосистема решений</p>
               </div>
+            </Link>
+            <div className="hidden md:flex items-center space-x-2 ml-6">
+              <span className="px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-purple-500 to-pink-500 rounded-full shadow-md hover:shadow-lg transition-all cursor-pointer">
+                SUPPORT
+              </span>
+              <span className="px-4 py-2 text-xs font-medium text-gray-600 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
+                OUTSOURCE
+              </span>
+              <span className="px-4 py-2 text-xs font-medium text-gray-600 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
+                PROJECTS
+              </span>
+              <span className="px-4 py-2 text-xs font-medium text-gray-600 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
+                HR
+              </span>
             </div>
             <nav className="flex items-center space-x-6">
-              <Link href="/scenarios" className="text-sm text-[#4B5563] hover:text-[#2563EB] transition-colors">
+              <Link href="/scenarios" className="text-sm text-gray-600 hover:text-purple-600 transition-colors font-medium">
                 Сценарии
               </Link>
-              <Link href="/resources" className="text-sm text-[#4B5563] hover:text-[#2563EB] transition-colors">
+              <Link href="/resources" className="text-sm text-gray-600 hover:text-purple-600 transition-colors font-medium">
                 Ресурсы
               </Link>
-              <Link href="/dashboard" className="text-sm text-[#4B5563] hover:text-[#2563EB] transition-colors">
+              <Link href="/dashboard" className="text-sm text-gray-600 hover:text-purple-600 transition-colors font-medium">
                 Дашборд
               </Link>
             </nav>
@@ -46,96 +57,164 @@ export default function Home() {
       </header>
 
       {/* Hero Section - стиль презентации ITSM365 */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-20">
+        {/* Animated background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 opacity-50"></div>
+        <div className="absolute inset-0 itsm-gradient opacity-5"></div>
+
+        {/* Floating orbs */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 float-animation"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 float-animation" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 float-animation" style={{animationDelay: '4s'}}></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block mb-4">
-                <span className="px-4 py-2 bg-[#2563EB] text-white text-sm font-medium rounded-full">
-                  Экосистема ITSM 365
+            <div className="fade-in">
+              <div className="inline-block mb-6">
+                <span className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-semibold rounded-full shadow-lg hover:shadow-xl transition-all btn-itsm">
+                  ✨ Экосистема ITSM 365
                 </span>
               </div>
-              <h1 className="text-5xl font-bold text-[#1F2937] mb-6 leading-tight">
-                Тренажёр менеджеров по продажам
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                <span className="gradient-text">Тренажёр менеджеров</span>
+                <br />
+                <span className="text-gray-800">по продажам</span>
               </h1>
-              <p className="text-xl text-[#6B7280] mb-8 leading-relaxed">
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Практикуйте навыки B2B продаж с AI-клиентами в реалистичных сценариях.
                 Отработка встреч, работа с возражениями, переговоры — всё в одном тренажёре.
               </p>
               <div className="flex flex-wrap gap-4 mb-12">
                 <Link
                   href="/scenarios"
-                  className="px-8 py-4 bg-[#2563EB] hover:bg-[#1E40AF] text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 btn-itsm"
                 >
-                  Начать тренировку →
+                  🚀 Начать тренировку →
                 </Link>
                 <Link
                   href="/resources"
-                  className="px-8 py-4 bg-white text-[#1F2937] font-semibold rounded-lg border-2 border-[#2563EB] hover:bg-blue-50 transition-all"
+                  className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl border-2 border-purple-200 hover:border-purple-400 hover:bg-purple-50 transition-all shadow-md hover:shadow-lg"
                 >
-                  Материалы для менеджеров
+                  📚 Материалы для менеджеров
                 </Link>
               </div>
 
               {/* Trust badges */}
-              <div className="flex items-center space-x-6 text-sm text-[#6B7280]">
-                <div className="flex items-center">
-                  <svg className="w-5 h-5 text-[#10B981] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span>400+ компаний</span>
+              <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600">
+                <div className="flex items-center glass px-4 py-2 rounded-full">
+                  <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mr-3">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span className="font-semibold">400+ компаний</span>
                 </div>
-                <div className="flex items-center">
-                  <svg className="w-5 h-5 text-[#10B981] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                  <span>Быстрый старт</span>
+                <div className="flex items-center glass px-4 py-2 rounded-full">
+                  <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg flex items-center justify-center mr-3">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <span className="font-semibold">Быстрый старт</span>
                 </div>
-                <div className="flex items-center">
-                  <svg className="w-5 h-5 text-[#10B981] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                  <span>SaaS модель</span>
+                <div className="flex items-center glass px-4 py-2 rounded-full">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-lg flex items-center justify-center mr-3">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                  </div>
+                  <span className="font-semibold">SaaS модель</span>
                 </div>
               </div>
             </div>
 
             {/* Сторона с иллюстрацией */}
-            <div className="hidden md:block">
+            <div className="hidden md:block fade-in" style={{animationDelay: '0.3s'}}>
               <div className="relative">
-                <div className="bg-gradient-to-br from-[#2563EB] to-[#1E40AF] rounded-2xl p-8 shadow-2xl">
-                  <div className="bg-white rounded-xl p-6">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg className="w-6 h-6 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
+                {/* Main card */}
+                <div className="bg-white rounded-3xl p-8 shadow-2xl border border-purple-100 hover-scale">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-bl-3xl opacity-20"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-blue-400 to-purple-400 rounded-tr-3xl opacity-20"></div>
+
+                  {/* Chat interface mock */}
+                  <div className="space-y-6">
+                    <div className="flex items-center mb-6">
+                      <div className="relative">
+                        <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg">
+                          <span className="text-white text-2xl font-bold">АП</span>
+                        </div>
+                        <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-400 rounded-full border-2 border-white"></div>
                       </div>
-                      <div>
-                        <p className="font-semibold text-[#1F2937]">Александр Петров</p>
-                        <p className="text-sm text-[#6B7280]">CIO, ТехноПром</p>
+                      <div className="ml-4">
+                        <p className="font-bold text-gray-800 text-lg">Александр Петров</p>
+                        <p className="text-sm text-gray-500">CIO, ТехноПром</p>
+                        <div className="flex items-center mt-1">
+                          <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                          <span className="text-xs text-green-600 font-medium">Онлайн</span>
+                        </div>
                       </div>
                     </div>
-                    <div className="space-y-3">
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#2563EB] rounded-full mt-2 mr-3"></div>
-                        <p className="text-sm text-[#4B5563]">«Звучит интересно. А как это работает с нашей текущей инфраструктурой?»</p>
+
+                    {/* Chat messages */}
+                    <div className="space-y-4">
+                      <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-4 border-l-4 border-purple-500">
+                        <div className="flex items-start">
+                          <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                            <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                            </svg>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium text-gray-800 mb-1">Клиент задаёт вопрос:</p>
+                            <p className="text-sm text-gray-600">«Звучит интересно. А как это работает с нашей текущей инфраструктурой?»</p>
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#10B981] rounded-full mt-2 mr-3"></div>
-                        <p className="text-sm text-[#4B5563]">«Сколько времени займёт внедрение?»</p>
+
+                      <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-4 border-l-4 border-blue-500">
+                        <div className="flex items-start">
+                          <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                            <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium text-gray-800 mb-1">Требуется ответ:</p>
+                            <p className="text-sm text-gray-600">«Сколько времени займёт внедрение?»</p>
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex items-start">
-                        <div className="w-2 h-2 bg-[#F59E0B] rounded-full mt-2 mr-3"></div>
-                        <p className="text-sm text-[#4B5563]">«Дорого по сравнению с конкурентами?»</p>
+
+                      <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-4 border-l-4 border-amber-500">
+                        <div className="flex items-start">
+                          <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                            <svg className="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                            </svg>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium text-gray-800 mb-1">Ценовое возражение:</p>
+                            <p className="text-sm text-gray-600">«Дорого по сравнению с конкурентами?»</p>
+                          </div>
+                        </div>
                       </div>
+                    </div>
+
+                    {/* Action buttons */}
+                    <div className="flex gap-3 pt-4">
+                      <button className="flex-1 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all btn-itsm text-sm">
+                        💬 Ответить
+                      </button>
+                      <button className="flex-1 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-all text-sm">
+                        📋 Подсказка
+                      </button>
                     </div>
                   </div>
                 </div>
 
-                {/* Плавающие элементы */}
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#10B981] bg-opacity-20 rounded-full blur-xl"></div>
-                <div className="absolute -top-4 -left-4 w-32 h-32 bg-[#2563EB] bg-opacity-10 rounded-full blur-2xl"></div>
+                {/* Floating elements */}
+                <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-20 blur-2xl float-animation"></div>
+                <div className="absolute -top-8 -left-8 w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full opacity-20 blur-3xl float-animation" style={{animationDelay: '1s'}}></div>
               </div>
             </div>
           </div>
@@ -143,63 +222,78 @@ export default function Home() {
       </section>
 
       {/* Преимущества */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#1F2937] mb-4">
-              Почему ITSM 365?
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-pink-50"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 fade-in">
+            <div className="inline-block mb-4">
+              <span className="px-4 py-2 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full">
+                🎯 Преимущества платформы
+              </span>
+            </div>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Почему <span className="gradient-text">ITSM 365?</span>
             </h2>
-            <p className="text-lg text-[#6B7280] max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Экосистема продуктов для комплексной автоматизации сервисных процессов
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl border border-blue-100 hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-[#2563EB] rounded-xl flex items-center justify-center mb-6">
-                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-[#1F2937] mb-3">SaaS модель</h3>
-              <p className="text-[#6B7280] mb-4">Быстрый старт без капитальных затрат. Автоматические обновления.</p>
-              <div className="flex items-center text-[#10B981] text-sm font-medium">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                2-8 недель внедрение
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-green-50 to-white p-8 rounded-xl border border-green-100 hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-[#10B981] rounded-xl flex items-center justify-center mb-6">
-                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-1.066-2.573c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.15 0 1.35.072 2.245.224 3.108-.592 1.103-1.63 2.43-3.108 2.572zM17.5 19c0-1.35.072-2.245.224-3.108.592 1.103 1.63 2.43 2.37 3.108 2.572M15 16.5c0-1.35.072-2.245.224-3.108.592 1.103 1.63 2.43 2.37 3.108 2.572" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-[#1F2937] mb-3">Low-code платформа</h3>
-              <p className="text-[#6B7280] mb-4">Настраивайте без разработчиков. Визуальный конструктор процессов.</p>
-              <div className="flex items-center text-[#10B981] text-sm font-medium">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Без программистов
+            <div className="stagger-in bg-white rounded-2xl p-8 shadow-lg border border-purple-100 card-itsm relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-400 rounded-bl-2xl opacity-20"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-3">SaaS модель</h3>
+                <p className="text-gray-600 mb-6">Быстрый старт без капитальных затрат. Автоматические обновления.</p>
+                <div className="flex items-center bg-green-50 px-4 py-2 rounded-full">
+                  <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-green-700 font-semibold text-sm">2-8 недель внедрение</span>
+                </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-50 to-white p-8 rounded-xl border border-purple-100 hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-[#8B5CF6] rounded-xl flex items-center justify-center mb-6">
-                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0l2.15-1.43a2 2 0 001.94-.35L21 8M10 14l-3.75-3.75M19 21l-7.89-5.26a2 2 0 00-2.22 0l-2.15 1.43a2 2 0 01-1.94.35L3 21" />
-                </svg>
+            <div className="stagger-in bg-white rounded-2xl p-8 shadow-lg border border-pink-100 card-itsm relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-pink-400 to-rose-400 rounded-bl-2xl opacity-20"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-1.066-2.573c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.15 0 1.35.072 2.245.224 3.108-.592 1.103-1.63 2.43-3.108 2.572zM17.5 19c0-1.35.072-2.245.224-3.108.592 1.103 1.63 2.43 2.37 3.108 2.572M15 16.5c0-1.35.072-2.245.224-3.108.592 1.103 1.63 2.43 2.37 3.108 2.572" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-3">Low-code платформа</h3>
+                <p className="text-gray-600 mb-6">Настраивайте без разработчиков. Визуальный конструктор процессов.</p>
+                <div className="flex items-center bg-pink-50 px-4 py-2 rounded-full">
+                  <svg className="w-5 h-5 text-pink-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-pink-700 font-semibold text-sm">Без программистов</span>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-[#1F2937] mb-3">4 продукта в экосистеме</h3>
-              <p className="text-[#6B7280] mb-4">SUPPORT, OUTSOURCE, PROJECTS, HR — бесшовная интеграция.</p>
-              <div className="flex items-center text-[#10B981] text-sm font-medium">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Масштабируемость
+            </div>
+
+            <div className="stagger-in bg-white rounded-2xl p-8 shadow-lg border border-purple-100 card-itsm relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-400 to-indigo-400 rounded-bl-2xl opacity-20"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0l2.15-1.43a2 2 0 001.94-.35L21 8M10 14l-3.75-3.75M19 21l-7.89-5.26a2 2 0 00-2.22 0l-2.15 1.43a2 2 0 01-1.94.35L3 21" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-3">4 продукта в экосистеме</h3>
+                <p className="text-gray-600 mb-6">SUPPORT, OUTSOURCE, PROJECTS, HR — бесшовная интеграция.</p>
+                <div className="flex items-center bg-purple-50 px-4 py-2 rounded-full">
+                  <svg className="w-5 h-5 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-purple-700 font-semibold text-sm">Масштабируемость</span>
+                </div>
               </div>
             </div>
           </div>
@@ -208,72 +302,83 @@ export default function Home() {
 
       {/* Scenarios */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-[#1F2937] mb-4">
-            Сценарии тренировок
+        <div className="text-center mb-16 fade-in">
+          <div className="inline-block mb-4">
+            <span className="px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 text-sm font-semibold rounded-full">
+              🎯 Сценарии тренировок
+            </span>
+          </div>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            Выберите <span className="gradient-text">свой путь</span>
           </h2>
-          <p className="text-lg text-[#6B7280] max-w-2xl mx-auto">
-            Выберите сценарий для тренировки навыков B2B продаж
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Практикуйтесь в реалистичных сценариях B2B продаж с AI-клиентами
           </p>
         </div>
 
         <div className="space-y-16">
           {/* Meetings Section */}
-          <section>
-            <div className="flex items-center mb-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#2563EB] to-[#1E40AF] rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <section className="fade-in">
+            <div className="flex items-center mb-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg pulse-glow">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-3xl font-bold text-[#1F2937] mb-2">Встречи и презентации</h3>
-                <p className="text-[#6B7280]">Тренировка проведения встреч с CIO и IT директорами</p>
+                <h3 className="text-3xl font-bold text-gray-800 mb-2">Встречи и презентации</h3>
+                <p className="text-gray-600">Тренировка проведения встреч с CIO и IT директорами</p>
               </div>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {meetings.map((scenario) => (
-                <ScenarioCard key={scenario.id} scenario={scenario} />
+              {meetings.map((scenario, index) => (
+                <div key={scenario.id} className="stagger-in" style={{animationDelay: `${index * 0.1}s`}}>
+                  <ScenarioCard scenario={scenario} />
+                </div>
               ))}
             </div>
           </section>
 
           {/* Objections Section */}
-          <section>
-            <div className="flex items-center mb-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED] rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <section className="fade-in">
+            <div className="flex items-center mb-8 bg-gradient-to-r from-pink-50 to-rose-50 rounded-2xl p-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg pulse-glow">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-3xl font-bold text-[#1F2937] mb-2">Работа с возражениями</h3>
-                <p className="text-[#6B7280]">Отработка типовых возражений клиентов</p>
+                <h3 className="text-3xl font-bold text-gray-800 mb-2">Работа с возражениями</h3>
+                <p className="text-gray-600">Отработка типовых возражений клиентов</p>
               </div>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              {objections.map((scenario) => (
-                <ScenarioCard key={scenario.id} scenario={scenario} />
+              {objections.map((scenario, index) => (
+                <div key={scenario.id} className="stagger-in" style={{animationDelay: `${index * 0.1}s`}}>
+                  <ScenarioCard scenario={scenario} />
+                </div>
               ))}
             </div>
           </section>
 
           {/* Negotiations Section */}
-          <section>
-            <div className="flex items-center mb-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED] rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <section className="fade-in">
+            <div className="flex items-center mb-8 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg pulse-glow">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-3xl font-bold text-[#1F2937] mb-2">Переговоры и закрытие</h3>
-                <p className="text-[#6B7280]">Финальный этап переговоров и закрытие сделок</p>
+                <h3 className="text-3xl font-bold text-gray-800 mb-2">Переговоры и закрытие</h3>
+                <p className="text-gray-600">Финальный этап переговоров и закрытие сделок</p>
               </div>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              {negotiations.map((scenario) => (
-                <ScenarioCard key={scenario.id} scenario={scenario} />
+              {negotiations.map((scenario, index) => (
+                <div key={scenario.id} className="stagger-in" style={{animationDelay: `${index * 0.1}s`}}>
+                  <ScenarioCard scenario={scenario} />
+                </div>
               ))}
             </div>
           </section>
@@ -281,57 +386,72 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#1F2937] text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+      <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white py-16 relative overflow-hidden">
+        <div className="absolute inset-0 itsm-gradient opacity-10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-[#2563EB] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">IT</span>
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-xl">IT</span>
                 </div>
                 <div>
-                  <h4 className="font-bold">ITSM 365</h4>
-                  <p className="text-xs text-[#9CA3AF]">Экосистема продуктов</p>
+                  <h4 className="font-bold text-xl gradient-text">ITSM 365</h4>
+                  <p className="text-xs text-gray-400">Экосистема продуктов</p>
                 </div>
               </div>
-              <p className="text-sm text-[#9CA3AF]">
+              <p className="text-sm text-gray-400 mb-4">
                 Тренажёр для обучения менеджеров по продажам
               </p>
+              <div className="flex items-center space-x-2">
+                <span className="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">SaaS</span>
+                <span className="px-3 py-1 bg-pink-500/20 text-pink-300 text-xs rounded-full">AI-powered</span>
+              </div>
             </div>
 
             <div>
-              <h5 className="font-semibold mb-4">Продукты</h5>
-              <ul className="space-y-2 text-sm text-[#9CA3AF]">
-                <li><Link href="/scenarios?type=meeting" className="hover:text-white transition-colors">SUPPORT</Link></li>
-                <li><Link href="/scenarios?type=objection" className="hover:text-white transition-colors">OUTSOURCE</Link></li>
-                <li><Link href="/scenarios?type=negotiation" className="hover:text-white transition-colors">PROJECTS</Link></li>
-                <li><Link href="/scenarios?type=negotiation" className="hover:text-white transition-colors">HR</Link></li>
+              <h5 className="font-semibold mb-4 text-purple-300">Продукты</h5>
+              <ul className="space-y-3 text-sm text-gray-400">
+                <li><Link href="/scenarios?type=meeting" className="hover:text-white transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></span>SUPPORT</Link></li>
+                <li><Link href="/scenarios?type=objection" className="hover:text-white transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-pink-500 rounded-full mr-2"></span>OUTSOURCE</Link></li>
+                <li><Link href="/scenarios?type=negotiation" className="hover:text-white transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>PROJECTS</Link></li>
+                <li><Link href="/scenarios?type=negotiation" className="hover:text-white transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>HR</Link></li>
               </ul>
             </div>
 
             <div>
-              <h5 className="font-semibold mb-4">Ресурсы</h5>
-              <ul className="space-y-2 text-sm text-[#9CA3AF]">
-                <li><Link href="/resources/presentations" className="hover:text-white transition-colors">Презентации</Link></li>
-                <li><Link href="/resources/scripts" className="hover:text-white transition-colors">Скрипты</Link></li>
-                <li><Link href="/resources/cases" className="hover:text-white transition-colors">Кейсы</Link></li>
+              <h5 className="font-semibold mb-4 text-purple-300">Ресурсы</h5>
+              <ul className="space-y-3 text-sm text-gray-400">
+                <li><Link href="/resources/presentations" className="hover:text-white transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></span>Презентации</Link></li>
+                <li><Link href="/resources/scripts" className="hover:text-white transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-pink-500 rounded-full mr-2"></span>Скрипты</Link></li>
+                <li><Link href="/resources/cases" className="hover:text-white transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>Кейсы</Link></li>
               </ul>
             </div>
 
             <div>
-              <h5 className="font-semibold mb-4">Помощь</h5>
-              <ul className="space-y-2 text-sm text-[#9CA3AF]">
-                <li><Link href="/dashboard" className="hover:text-white transition-colors">Дашборд</Link></li>
-                <li><Link href="/history" className="hover:text-white transition-colors">История</Link></li>
-                <li><Link href="/profile" className="hover:text-white transition-colors">Профиль</Link></li>
+              <h5 className="font-semibold mb-4 text-purple-300">Помощь</h5>
+              <ul className="space-y-3 text-sm text-gray-400">
+                <li><Link href="/dashboard" className="hover:text-white transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></span>Дашборд</Link></li>
+                <li><Link href="/history" className="hover:text-white transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-pink-500 rounded-full mr-2"></span>История</Link></li>
+                <li><Link href="/profile" className="hover:text-white transition-colors flex items-center"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>Профиль</Link></li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-[#374151] pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-[#9CA3AF]">© 2024 ITSM 365. Все права защищены.</p>
+          <div className="border-t border-purple-500/20 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-sm text-gray-400">© 2024 ITSM 365. Все права защищены.</p>
             <div className="flex items-center space-x-4 mt-4 md:mt-0">
-              <span className="text-xs text-[#9CA3AF]">🔗 https://salestrainer-itsm.netlify.app</span>
+              <a
+                href="https://salestrainer-itsm.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-purple-400 hover:text-purple-300 transition-colors text-sm"
+              >
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
+                salestrainer-itsm.netlify.app
+              </a>
             </div>
           </div>
         </div>
@@ -343,9 +463,9 @@ export default function Home() {
 // Scenario Card Component в стиле ITSM365
 function ScenarioCard({ scenario }: { scenario: any }) {
   const difficultyColors: Record<string, string> = {
-    beginner: 'bg-[#10B981] text-white',
-    intermediate: 'bg-[#F59E0B] text-white',
-    advanced: 'bg-[#EF4444] text-white'
+    beginner: 'bg-gradient-to-r from-green-400 to-emerald-500',
+    intermediate: 'bg-gradient-to-r from-amber-400 to-orange-500',
+    advanced: 'bg-gradient-to-r from-red-400 to-rose-500'
   };
 
   const difficultyLabels: Record<string, string> = {
@@ -354,60 +474,71 @@ function ScenarioCard({ scenario }: { scenario: any }) {
     advanced: 'Продвинутый'
   };
 
+  const gradientColors: Record<string, string> = {
+    beginner: 'from-green-500 to-emerald-600',
+    intermediate: 'from-amber-500 to-orange-600',
+    advanced: 'from-red-500 to-rose-600'
+  };
+
   return (
     <Link href={`/scenarios/${scenario.id}`} className="block">
-      <div className="bg-white rounded-xl p-6 border-2 border-gray-100 hover:border-[#2563EB] hover:shadow-xl transition-all cursor-pointer group h-full">
-        <div className="flex items-start justify-between mb-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-[#2563EB] to-[#1E40AF] rounded-xl flex items-center justify-center">
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H5m14 0a2 2 0 002 2v-2a2 2 0 00-2-2h-2m-9 0H9a2 2 0 00-2 2v2a2 2 0 002 2h2m-6 9h14a2 2 0 002-2v-2a2 2 0 00-2-2h-2" />
-            </svg>
-          </div>
-          <span className={`px-3 py-1 text-xs font-semibold rounded-full ${difficultyColors[scenario.difficulty]}`}>
-            {difficultyLabels[scenario.difficulty]}
-          </span>
-        </div>
+      <div className="bg-white rounded-2xl p-6 shadow-lg border border-purple-100 hover:border-purple-300 card-itsm h-full relative overflow-hidden group">
+        {/* Gradient accent */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-pink-100 rounded-bl-2xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
 
-        <h4 className="text-lg font-bold text-[#1F2937] mb-2 group-hover:text-[#2563EB] transition-colors">
-          {scenario.title}
-        </h4>
-        <p className="text-[#6B7280] text-sm mb-4 line-clamp-2">
-          {scenario.description}
-        </p>
-
-        <div className="flex items-center justify-between text-xs text-[#6B7280] mb-4">
-          <div className="flex items-center">
-            <svg className="w-4 h-4 mr-1 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            {scenario.duration} мин
-          </div>
-          <div className="flex items-center">
-            <svg className="w-4 h-4 mr-1 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            {scenario.objectives?.length} критериев
-          </div>
-        </div>
-
-        <div className="border-t border-gray-100 pt-4 mb-4">
-          <div className="flex items-center">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#2563EB] to-[#1E40AF] rounded-full flex items-center justify-center mr-3">
-              <span className="text-white font-semibold text-sm">
-                {scenario.clientPersona.name.charAt(0)}
-              </span>
+        <div className="relative z-10">
+          <div className="flex items-start justify-between mb-4">
+            <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+              <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H5m14 0a2 2 0 002 2v-2a2 2 0 00-2-2h-2m-6 9h14a2 2 0 002-2v-2a2 2 0 00-2-2h-2m-6 9H9a2 2 0 00-2 2v2a2 2 0 002 2h2m-6 9h14a2 2 0 002-2v-2a2 2 0 00-2-2h-2" />
+              </svg>
             </div>
-            <div>
-              <p className="text-sm font-medium text-[#1F2937]">{scenario.clientPersona.name}</p>
-              <p className="text-xs text-[#6B7280]">{scenario.clientPersona.role}, {scenario.clientPersona.company}</p>
+            <span className={`px-4 py-2 text-xs font-bold text-white rounded-full shadow-md ${difficultyColors[scenario.difficulty]}`}>
+              {difficultyLabels[scenario.difficulty]}
+            </span>
+          </div>
+
+          <h4 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors line-clamp-2">
+            {scenario.title}
+          </h4>
+          <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+            {scenario.description}
+          </p>
+
+          <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
+            <div className="flex items-center">
+              <svg className="w-4 h-4 mr-1 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {scenario.duration} мин
+            </div>
+            <div className="flex items-center">
+              <svg className="w-4 h-4 mr-1 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {scenario.objectives?.length} критериев
             </div>
           </div>
-        </div>
 
-        <div className="mt-4">
-          <button className="w-full bg-gradient-to-r from-[#2563EB] to-[#1E40AF] hover:from-[#1E40AF] hover:to-[#2563EB] text-white font-semibold py-3 px-4 rounded-lg transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-            Начать тренировку →
-          </button>
+          <div className="border-t border-purple-100 pt-4 mb-4">
+            <div className="flex items-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-3 shadow-md">
+                <span className="text-white font-semibold">
+                  {scenario.clientPersona.name.charAt(0)}
+                </span>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-gray-800">{scenario.clientPersona.name}</p>
+                <p className="text-xs text-gray-500">{scenario.clientPersona.role}, {scenario.clientPersona.company}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-4">
+            <button className={`w-full bg-gradient-to-r ${gradientColors[scenario.difficulty]} hover:opacity-90 text-white font-semibold py-3 px-4 rounded-xl transition-all shadow-md hover:shadow-lg btn-itsm`}>
+              Начать тренировку →
+            </button>
+          </div>
         </div>
       </div>
     </Link>
