@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50">
       {/* Header - стиль ITSM365 с точными цветами */}
-      <header className="bg-white/80 backdrop-blur-lg border-b border-purple-100 sticky top-0 z-50 shadow-sm">
+      <header className="bg-white/95 backdrop-blur-md border-b border-purple-100 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
@@ -63,9 +63,9 @@ export default function Home() {
         <div className="absolute inset-0 itsm-gradient opacity-5"></div>
 
         {/* Floating orbs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 float-animation"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 float-animation" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 float-animation" style={{animationDelay: '4s'}}></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-15 float-animation"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl opacity-15 float-animation" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-2xl opacity-15 float-animation" style={{animationDelay: '4s'}}></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -132,7 +132,7 @@ export default function Home() {
             <div className="hidden md:block fade-in" style={{animationDelay: '0.3s'}}>
               <div className="relative">
                 {/* Main card */}
-                <div className="bg-white rounded-3xl p-8 shadow-2xl border border-purple-100 hover-scale">
+                <div className="bg-white rounded-3xl p-8 shadow-2xl border border-purple-200/50 hover-scale">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-bl-3xl opacity-20"></div>
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-blue-400 to-purple-400 rounded-tr-3xl opacity-20"></div>
 
@@ -213,8 +213,8 @@ export default function Home() {
                 </div>
 
                 {/* Floating elements */}
-                <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-20 blur-2xl float-animation"></div>
-                <div className="absolute -top-8 -left-8 w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full opacity-20 blur-3xl float-animation" style={{animationDelay: '1s'}}></div>
+                <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-15 blur-3xl float-animation"></div>
+                <div className="absolute -top-8 -left-8 w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full opacity-10 blur-3xl float-animation" style={{animationDelay: '1s'}}></div>
               </div>
             </div>
           </div>
@@ -240,8 +240,8 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="stagger-in bg-white rounded-2xl p-8 shadow-lg border border-purple-100 card-itsm relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-400 rounded-bl-2xl opacity-20"></div>
+            <div className="stagger-in bg-white rounded-2xl p-8 shadow-lg border border-purple-200/50 card-itsm relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-400 rounded-bl-2xl opacity-15"></div>
               <div className="relative z-10">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -319,7 +319,7 @@ export default function Home() {
         <div className="space-y-16">
           {/* Meetings Section */}
           <section className="fade-in">
-            <div className="flex items-center mb-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6">
+            <div className="flex items-center mb-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-200/50 shadow-sm">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg pulse-glow">
                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -482,9 +482,9 @@ function ScenarioCard({ scenario }: { scenario: any }) {
 
   return (
     <Link href={`/scenarios/${scenario.id}`} className="block">
-      <div className="bg-white rounded-2xl p-6 shadow-lg border border-purple-100 hover:border-purple-300 card-itsm h-full relative overflow-hidden group">
+      <div className="bg-white rounded-2xl p-6 shadow-lg border border-purple-200/50 hover:border-purple-400 card-itsm h-full relative overflow-hidden group">
         {/* Gradient accent */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-pink-100 rounded-bl-2xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-pink-100 rounded-bl-2xl opacity-40 group-hover:opacity-80 transition-opacity"></div>
 
         <div className="relative z-10">
           <div className="flex items-start justify-between mb-4">
