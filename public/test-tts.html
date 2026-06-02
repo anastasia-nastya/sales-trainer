@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест Speech Synthesis</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        button {
+            background: #007AFF;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background: #0051D5;
+        }
+        .log {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .warning { background: #fff3cd; color: #856404; }
+    </style>
+</head>
+<body>
+    <h1>🔊 Тест Speech Synthesis в Safari</h1>
+
+    <div class="log" id="log">Загрузка...</div>
+
+    <button onclick="testSupport()">Проверить поддержку</button>
+    <button onclick="listVoices()">Список голосов</button>
+    <button onclick="speakHello()">Сказать "Привет"</button>
+    <button onclick="speakRussian()">Сказать русский текст</button>
+    <button onclick="testVolume()">Проверить громкость</button>
+
+    <script>
+        const log = document.getElementById('log');
+
+        function addLog(message, type = '') {
+            const time = new Date().toLocaleTimeString();
+            log.innerHTML += `<div style="margin: 5px 0; ${type === 'error' ? 'color: red' : type === 'success' ? 'color: green' : ''}">[${time}] ${message}</div>`;
+            log.scrollTop = log.scrollHeight;
+        }
+
+        function testSupport() {
+            addLog('=== Проверка поддержки ===');
+
+            if ('speechSynthesis' in window) {
+                addLog('✅ Speech synthesis поддерживается!', 'success');
+                return true;
+            } else {
+                addLog('❌ Speech synthesis НЕ поддерживается', 'error');
+                return false;
+            }
+        }
+
+        function listVoices() {
+            addLog('=== Список голосов ===');
+
+            const voices = speechSynthesis.getVoices();
+            addLog(`Всего голосов: ${voices.length}`);
+
+            const russianVoices = voices.filter(v => v.lang.startsWith('ru'));
+            addLog(`Русских голосов: ${russianVoices.length}`);
+
+            if (russianVoices.length > 0) {
+                addLog('Русские голосы:', 'success');
+                russianVoices.forEach(v => {
+                    addLog(`  - ${v.name} (${v.lang})`);
+                });
+            } else {
+                addLog('⚠️ Русских голосов нет!', 'warning');
+                addLog('Доступные голоса:', 'warning');
+                voices.slice(0, 5).forEach(v => {
+                    addLog(`  - ${v.name} (${v.lang})`);
+                });
+            }
+        }
+
+        function speakHello() {
+            addLog('=== Говорим "Hello" ===');
+
+            const utterance = new SpeechSynthesisUtterance('Hello!');
+            utterance.lang = 'en-US';
+
+            utterance.onstart = () => addLog('🔊 Начало речи', 'success');
+            utterance.onend = () => addLog('✅ Речь завершена', 'success');
+            utterance.onerror = (e) => addLog(`❌ Ошибка: ${e.error}`, 'error');
+
+            speechSynthesis.speak(utterance);
+        }
+
+        function speakRussian() {
+            addLog('=== Говорим русский текст ===');
+
+            const voices = speechSynthesis.getVoices();
+            const russianVoice = voices.find(v => v.lang.startsWith('ru'));
+
+            const text = "Здравствуйте! Меня зовут Александр. Я тестовый голос для проверки синтеза речи.";
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ru-RU';
+            utterance.rate = 1.0;
+            utterance.pitch = 1.0;
+            utterance.volume = 1.0;
+
+            if (russianVoice) {
+                utterance.voice = russianVoice;
+                addLog(`Используем голос: ${russianVoice.name}`, 'success');
+            } else {
+                addLog('⚠️ Русский голос не найден, используем стандартный', 'warning');
+            }
+
+            utterance.onstart = () => {
+                addLog('🔊 Начало русской речи', 'success');
+                addLog('Проверьте громкость на Mac!');
+            };
+            utterance.onend = () => addLog('✅ Русская речь завершена', 'success');
+            utterance.onerror = (e) => addLog(`❌ Ошибка: ${e.error}`, 'error');
+
+            speechSynthesis.speak(utterance);
+        }
+
+        function testVolume() {
+            addLog('=== Проверка громкости ===');
+            addLog('Убедитесь, что:');
+            addLog('1. Громкость на Mac включена (F11/F12)');
+            addLog('2. Safari не выключен');
+            addLog('3. Наушники подключены (если используются)');
+
+            // Пробуем воспроизвести тестовый звук
+            const utterance = new SpeechSynthesisUtterance('Тест громкости. Если вы слышите этот голос, значит всё работает!');
+            utterance.volume = 1.0;
+            utterance.rate = 0.9;
+
+            utterance.onstart = () => addLog('🔊 Тест громкости начат...', 'success');
+            utterance.onend = () => addLog('✅ Тест завершён', 'success');
+            utterance.onerror = (e) => addLog(`❌ Ошибка: ${e.error}`, 'error');
+
+            speechSynthesis.speak(utterance);
+        }
+
+        // Автоматическая проверка при загрузке
+        window.addEventListener('load', () => {
+            addLog('Страница загружена');
+            testSupport();
+
+            // Загружаем голоса
+            if ('speechSynthesis' in window) {
+                speechSynthesis.getVoices();
+                addLog('Голоса загружены');
+
+                // Слушаем изменение голосов
+                speechSynthesis.onvoiceschanged = () => {
+                    addLog('Голоса обновлены');
+                    listVoices();
+                };
+
+                setTimeout(() => listVoices(), 100);
+            }
+        });
+    </script>
+</body>
+</html>

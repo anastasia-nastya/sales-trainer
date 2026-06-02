@@ -1,36 +1,153 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎯 ITSM 365 Тренажёр менеджеров по продажам
 
-## Getting Started
+Интерактивный тренажёр для обучения менеджеров по продажам с AI-клиентом и голосовым диалогом.
 
-First, run the development server:
+## ✨ Возможности
+
+- 🎙️ **Аудио диалоги** — общайтесь с AI-клиентом голосом
+- 🤖 **Реалистичные сценарии** — B2B продажи в ITSM-сфере
+- 👥 **AI-клиенты** — разные персоны с реалистичным поведением
+- 📊 **Детальная аналитика** — оценка навыков и рекомендации
+- 🎯 **Критерии успеха** — чёткая оценка по конкретным навыкам
+- 📚 **Полезные материалы** — скрипты, кейсы, презентации
+
+## 🚀 Быстрый старт
+
+### Локально:
 
 ```bash
+# Клонирование и установка
+git clone https://github.com/your-username/sales-trainer.git
+cd sales-trainer
+npm install
+
+# Настройка переменных окружения
+cp .env.example .env.local
+# Отредактируйте .env.local и добавьте ANTHROPIC_API_KEY
+
+# Запуск
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Онлайн (Vercel):
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🔗 **Демо**: https://sales-trainer.vercel.app
 
-## Learn More
+## 📋 Сценарии обучения
 
-To learn more about Next.js, take a look at the following resources:
+### Встречи и презентации
+- Первая встреча с потенциальным клиентом
+- Презентация ITSM 365 для сети кофеен
+- Автоматизация для агропромышленного комплекса
+- ITSM 365.Outsource для аутсорсинга
+- HR-автоматизация для управляющей компании
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Работа с возражениями
+- Возражение: "Дорого, конкуренты дешевле"
+- "Мы удовлетворены текущим решением"
+- "Нам требуется On-Premise решение"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Переговоры и закрытие
+- Финальные переговоры: условия контракта
+- Переговоры с CTO: технические требования
 
-## Deploy on Vercel
+## 🎨 Особенности
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Реалистичные диалоги
+- **B2B контекст** — реальные вопросы CIO/IT Directors
+- **ITSM365 специфика** — конкуренты, low-code, внедрение, ROI
+- **Логичные реакции** — "Дорого по сравнению с кем?", "А сколько времени на миграцию?"
+- **Персонализация** — поведение адаптируется под роль, бюджет, timeline
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Голос и интонация
+- **Голоса по полу** — мужской/женский голоса для разных персон
+- **Интонация** — естественные вариации скорости и тона
+- **Паузы** — умные паузы между предложениями
+- **Акценты** — выделение важных слов
+
+## 📁 Структура проекта
+
+```
+sales-trainer/
+├── app/                    # Next.js App Router
+│   ├── api/               # API endpoints
+│   │   ├── chat/          # Endpoint для диалога
+│   │   └── evaluate/      # Endpoint для оценки
+│   ├── scenarios/         # Страницы сценариев
+│   └── resources/         # Полезные материалы
+├── components/            # React компоненты
+│   ├── DialogSession.tsx  # Компонент диалоговой сессии
+│   └── SessionResult.tsx  # Компонент результатов
+├── lib/                   # Бизнес-логика
+│   ├── ai/                # AI клиент и промпты
+│   ├── audio/             # Аудио движок
+│   └── scenarios/         # Данные сценариев
+└── types/                 # TypeScript типы
+```
+
+## 🔧 Технологии
+
+- **Next.js 16** — React фреймворк
+- **TypeScript** — Типизация
+- **TailwindCSS** — Стили
+- **Anthropic Claude API** — AI клиент
+- **Web Speech API** — Распознавание и синтез речи
+
+## 🔐 Безопасность
+
+- API ключ хранится в `.env.local` (не коммитить в git!)
+- Все запросы к Claude API идут с сервера
+- Нет передачи чувствительных данных третьим лицам
+
+## 🚢 Деплой
+
+Подробная инструкция в [DEPLOYMENT.md](DEPLOYMENT.md)
+
+### Кратко:
+
+1. Создайте репозиторий на GitHub
+2. Откройте [vercel.com](https://vercel.com)
+3. Import Git Repository → Next.js
+4. Добавьте `ANTHROPIC_API_KEY` в Environment Variables
+5. Deploy!
+
+## 📝 Использование
+
+### 1. Выбор сценария
+На главной странице выберите один из доступных сценариев
+
+### 2. Изучение деталей
+Ознакомьтесь с персоной клиента, целями и критериями успеха
+
+### 3. Тренировка
+Нажмите "Начать тренировку" и общайтесь с AI-клиентом:
+- Используйте микрофон для голосового ввода
+- Или вводите текст вручную
+
+### 4. Результаты
+После завершения получите:
+- Общий балл (0-100)
+- Оценку по каждому навыку
+- Сильные стороны и области для улучшения
+- Персональные рекомендации
+
+## 🤝 Поддержка
+
+При возникновении проблем:
+1. Проверьте наличие API ключа в `.env.local`
+2. Убедитесь, что микрофон разрешён в браузере
+3. Проверьте консоль браузера на ошибки
+
+## 📄 Лицензия
+
+© 2024 ITSM 365. Все права защищены.
+
+## 🌐 Онлайн Version
+
+🔗 **Публичная версия**: [тут будет ссылка после деплоя]
+
+---
+
+**Создано с ❤️ для менеджеров по продажам ITSM 365**

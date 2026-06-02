@@ -1,0 +1,12 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "env": {
+    "ANTHROPIC_API_KEY": {
+      "description": "API ключ для Claude AI (получите на console.anthropic.com)",
+      "required": false
+    }
+  }
+}
