@@ -8,39 +8,22 @@ export default function Home() {
   const negotiations = getScenariosByType('negotiation');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50">
-      {/* Header - стиль ITSM365 с точными цветами */}
-      <header className="bg-white/95 backdrop-blur-md border-b border-purple-100 sticky top-0 z-50 shadow-sm">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+      {/* Header - минималистичный */}
+      <header className="bg-white/90 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-              <div className="relative">
-                <div className="w-12 h-12 rounded-xl itsm-gradient flex items-center justify-center shadow-lg pulse-glow">
-                  <span className="text-white font-bold text-lg">IT</span>
-                </div>
-                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-gradient-to-r from-pink-400 to-purple-600 rounded-full animate-ping"></div>
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center shadow-sm">
+                <span className="text-white font-bold text-lg">IT</span>
               </div>
               <div>
-                <h1 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                <h1 className="text-xl font-bold text-gray-900">
                   ITSM 365
                 </h1>
                 <p className="text-xs text-gray-500">Экосистема решений</p>
               </div>
             </Link>
-            <div className="hidden md:flex items-center space-x-2 ml-6">
-              <span className="px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-purple-500 to-pink-500 rounded-full shadow-md hover:shadow-lg transition-all cursor-pointer">
-                SUPPORT
-              </span>
-              <span className="px-4 py-2 text-xs font-medium text-gray-600 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
-                OUTSOURCE
-              </span>
-              <span className="px-4 py-2 text-xs font-medium text-gray-600 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
-                PROJECTS
-              </span>
-              <span className="px-4 py-2 text-xs font-medium text-gray-600 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
-                HR
-              </span>
-            </div>
             <nav className="flex items-center space-x-6">
               <Link href="/scenarios" className="text-sm text-gray-600 hover:text-purple-600 transition-colors font-medium">
                 Сценарии
@@ -56,29 +39,23 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section - стиль презентации ITSM365 */}
-      <section className="relative overflow-hidden py-20">
-        {/* Animated background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 opacity-50"></div>
-        <div className="absolute inset-0 itsm-gradient opacity-5"></div>
-
-        {/* Floating orbs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-15 float-animation"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl opacity-15 float-animation" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-2xl opacity-15 float-animation" style={{animationDelay: '4s'}}></div>
+      {/* Hero Section - минималистичный */}
+      <section className="relative overflow-hidden py-20 bg-white">
+        {/* Subtle background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-blue-50 opacity-30"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="fade-in">
               <div className="inline-block mb-6">
-                <span className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-semibold rounded-full shadow-lg hover:shadow-xl transition-all btn-itsm">
+                <span className="px-6 py-3 bg-purple-600 text-white text-sm font-semibold rounded-full shadow-sm">
                   ✨ Экосистема ITSM 365
                 </span>
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                <span className="gradient-text">Тренажёр менеджеров</span>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-gray-900">
+                Тренажёр менеджеров
                 <br />
-                <span className="text-gray-800">по продажам</span>
+                по продажам
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Практикуйте навыки B2B продаж с AI-клиентами в реалистичных сценариях.
@@ -87,13 +64,13 @@ export default function Home() {
               <div className="flex flex-wrap gap-4 mb-12">
                 <Link
                   href="/scenarios"
-                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 btn-itsm"
+                  className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl transition-colors shadow-md"
                 >
                   🚀 Начать тренировку →
                 </Link>
                 <Link
                   href="/resources"
-                  className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl border-2 border-purple-200 hover:border-purple-400 hover:bg-purple-50 transition-all shadow-md hover:shadow-lg"
+                  className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-colors shadow-sm"
                 >
                   📚 Материалы для менеджеров
                 </Link>
@@ -101,28 +78,22 @@ export default function Home() {
 
               {/* Trust badges */}
               <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600">
-                <div className="flex items-center glass px-4 py-2 rounded-full">
-                  <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mr-3">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
+                <div className="flex items-center bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
+                  <svg className="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   <span className="font-semibold">400+ компаний</span>
                 </div>
-                <div className="flex items-center glass px-4 py-2 rounded-full">
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg flex items-center justify-center mr-3">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
+                <div className="flex items-center bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
+                  <svg className="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
                   <span className="font-semibold">Быстрый старт</span>
                 </div>
-                <div className="flex items-center glass px-4 py-2 rounded-full">
-                  <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-lg flex items-center justify-center mr-3">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-                  </div>
+                <div className="flex items-center bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
+                  <svg className="w-5 h-5 text-purple-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
                   <span className="font-semibold">SaaS модель</span>
                 </div>
               </div>
@@ -132,10 +103,7 @@ export default function Home() {
             <div className="hidden md:block fade-in" style={{animationDelay: '0.3s'}}>
               <div className="relative">
                 {/* Main card */}
-                <div className="bg-white rounded-3xl p-8 shadow-2xl border border-purple-200/50 hover-scale">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-bl-3xl opacity-20"></div>
-                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-blue-400 to-purple-400 rounded-tr-3xl opacity-20"></div>
-
+                <div className="bg-white rounded-2xl p-8 shadow-xl border border-slate-200">
                   {/* Chat interface mock */}
                   <div className="space-y-6">
                     <div className="flex items-center mb-6">
@@ -157,7 +125,7 @@ export default function Home() {
 
                     {/* Chat messages */}
                     <div className="space-y-4">
-                      <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-4 border-l-4 border-purple-500">
+                      <div className="bg-purple-50 rounded-xl p-4 border-l-4 border-purple-400">
                         <div className="flex items-start">
                           <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
                             <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -165,13 +133,13 @@ export default function Home() {
                             </svg>
                           </div>
                           <div>
-                            <p className="text-sm font-medium text-gray-800 mb-1">Клиент задаёт вопрос:</p>
-                            <p className="text-sm text-gray-600">«Звучит интересно. А как это работает с нашей текущей инфраструктурой?»</p>
+                            <p className="text-sm font-medium text-gray-800 mb-1">Клиент:</p>
+                            <p className="text-sm text-gray-600">«А как это работает с нашей текущей инфраструктурой?»</p>
                           </div>
                         </div>
                       </div>
 
-                      <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-4 border-l-4 border-blue-500">
+                      <div className="bg-blue-50 rounded-xl p-4 border-l-4 border-blue-400">
                         <div className="flex items-start">
                           <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
                             <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -179,22 +147,8 @@ export default function Home() {
                             </svg>
                           </div>
                           <div>
-                            <p className="text-sm font-medium text-gray-800 mb-1">Требуется ответ:</p>
-                            <p className="text-sm text-gray-600">«Сколько времени займёт внедрение?»</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-4 border-l-4 border-amber-500">
-                        <div className="flex items-start">
-                          <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                            <svg className="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                            </svg>
-                          </div>
-                          <div>
-                            <p className="text-sm font-medium text-gray-800 mb-1">Ценовое возражение:</p>
-                            <p className="text-sm text-gray-600">«Дорого по сравнению с конкурентами?»</p>
+                            <p className="text-sm font-medium text-gray-800 mb-1">Ваш ответ:</p>
+                            <p className="text-sm text-gray-600">«Внедрение займёт 2-8 недель»</p>
                           </div>
                         </div>
                       </div>
@@ -202,19 +156,15 @@ export default function Home() {
 
                     {/* Action buttons */}
                     <div className="flex gap-3 pt-4">
-                      <button className="flex-1 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all btn-itsm text-sm">
+                      <button className="flex-1 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors text-sm">
                         💬 Ответить
                       </button>
-                      <button className="flex-1 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-all text-sm">
+                      <button className="flex-1 py-3 bg-slate-100 text-gray-700 font-semibold rounded-lg hover:bg-slate-200 transition-colors text-sm">
                         📋 Подсказка
                       </button>
                     </div>
                   </div>
                 </div>
-
-                {/* Floating elements */}
-                <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-15 blur-3xl float-animation"></div>
-                <div className="absolute -top-8 -left-8 w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full opacity-10 blur-3xl float-animation" style={{animationDelay: '1s'}}></div>
               </div>
             </div>
           </div>
@@ -222,17 +172,12 @@ export default function Home() {
       </section>
 
       {/* Преимущества */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-pink-50"></div>
+      <section className="py-20 bg-slate-50">
+        <div className="absolute inset-0 bg-white"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 fade-in">
-            <div className="inline-block mb-4">
-              <span className="px-4 py-2 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full">
-                🎯 Преимущества платформы
-              </span>
-            </div>
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Почему <span className="gradient-text">ITSM 365?</span>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Почему ITSM 365?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Экосистема продуктов для комплексной автоматизации сервисных процессов
@@ -243,15 +188,15 @@ export default function Home() {
             <div className="stagger-in bg-white rounded-2xl p-8 shadow-lg border border-purple-200/50 card-itsm relative overflow-hidden">
               <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-400 rounded-bl-2xl opacity-15"></div>
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <div className="w-14 h-14 bg-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-sm">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-3">SaaS модель</h3>
                 <p className="text-gray-600 mb-6">Быстрый старт без капитальных затрат. Автоматические обновления.</p>
-                <div className="flex items-center bg-green-50 px-4 py-2 rounded-full">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
+                  <svg className="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span className="text-green-700 font-semibold text-sm">2-8 недель внедрение</span>
@@ -278,9 +223,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="stagger-in bg-white rounded-2xl p-8 shadow-lg border border-purple-100 card-itsm relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-400 to-indigo-400 rounded-bl-2xl opacity-20"></div>
-              <div className="relative z-10">
+            <div className="stagger-in bg-white rounded-xl p-8 shadow-md border border-slate-200 card-itsm">
+              <div>
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0l2.15-1.43a2 2 0 001.94-.35L21 8M10 14l-3.75-3.75M19 21l-7.89-5.26a2 2 0 00-2.22 0l-2.15 1.43a2 2 0 01-1.94.35L3 21" />
@@ -302,14 +246,9 @@ export default function Home() {
 
       {/* Scenarios */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-16 fade-in">
-          <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 text-sm font-semibold rounded-full">
-              🎯 Сценарии тренировок
-            </span>
-          </div>
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            Выберите <span className="gradient-text">свой путь</span>
+        <div className="text-center mb-12 fade-in">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Сценарии тренировок
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Практикуйтесь в реалистичных сценариях B2B продаж с AI-клиентами
@@ -319,8 +258,8 @@ export default function Home() {
         <div className="space-y-16">
           {/* Meetings Section */}
           <section className="fade-in">
-            <div className="flex items-center mb-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-200/50 shadow-sm">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg pulse-glow">
+            <div className="flex items-center mb-6 bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <div className="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mr-5 shadow-sm">
                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
@@ -386,17 +325,16 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white py-16 relative overflow-hidden">
-        <div className="absolute inset-0 itsm-gradient opacity-10"></div>
+      <footer className="bg-slate-900 text-white py-12">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center shadow-sm">
                   <span className="text-white font-bold text-xl">IT</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl gradient-text">ITSM 365</h4>
+                  <h4 className="font-bold text-xl text-white">ITSM 365</h4>
                   <p className="text-xs text-gray-400">Экосистема продуктов</p>
                 </div>
               </div>
@@ -405,7 +343,7 @@ export default function Home() {
               </p>
               <div className="flex items-center space-x-2">
                 <span className="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">SaaS</span>
-                <span className="px-3 py-1 bg-pink-500/20 text-pink-300 text-xs rounded-full">AI-powered</span>
+                <span className="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">AI-powered</span>
               </div>
             </div>
 
@@ -460,12 +398,12 @@ export default function Home() {
   );
 }
 
-// Scenario Card Component в стиле ITSM365
+// Scenario Card Component - минималистичный
 function ScenarioCard({ scenario }: { scenario: any }) {
   const difficultyColors: Record<string, string> = {
-    beginner: 'bg-gradient-to-r from-green-400 to-emerald-500',
-    intermediate: 'bg-gradient-to-r from-amber-400 to-orange-500',
-    advanced: 'bg-gradient-to-r from-red-400 to-rose-500'
+    beginner: 'bg-emerald-500',
+    intermediate: 'bg-amber-500',
+    advanced: 'bg-rose-500'
   };
 
   const difficultyLabels: Record<string, string> = {
@@ -474,38 +412,28 @@ function ScenarioCard({ scenario }: { scenario: any }) {
     advanced: 'Продвинутый'
   };
 
-  const gradientColors: Record<string, string> = {
-    beginner: 'from-green-500 to-emerald-600',
-    intermediate: 'from-amber-500 to-orange-600',
-    advanced: 'from-red-500 to-rose-600'
-  };
-
   return (
     <Link href={`/scenarios/${scenario.id}`} className="block">
-      <div className="bg-white rounded-2xl p-6 shadow-lg border border-purple-200/50 hover:border-purple-400 card-itsm h-full relative overflow-hidden group">
-        {/* Gradient accent */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-pink-100 rounded-bl-2xl opacity-40 group-hover:opacity-80 transition-opacity"></div>
-
-        <div className="relative z-10">
-          <div className="flex items-start justify-between mb-4">
-            <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-              <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H5m14 0a2 2 0 002 2v-2a2 2 0 00-2-2h-2m-6 9h14a2 2 0 002-2v-2a2 2 0 00-2-2h-2m-6 9H9a2 2 0 00-2 2v2a2 2 0 002 2h2m-6 9h14a2 2 0 002-2v-2a2 2 0 00-2-2h-2" />
-              </svg>
-            </div>
-            <span className={`px-4 py-2 text-xs font-bold text-white rounded-full shadow-md ${difficultyColors[scenario.difficulty]}`}>
-              {difficultyLabels[scenario.difficulty]}
-            </span>
+      <div className="bg-white rounded-xl p-6 shadow-md border border-slate-200 hover:border-purple-400 card-itsm h-full group">
+        <div className="flex items-start justify-between mb-4">
+          <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center shadow-sm group-hover:bg-purple-700 transition-colors">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H5m14 0a2 2 0 002 2v-2a2 2 0 00-2-2h-2m-6 9h14a2 2 0 002-2v-2a2 2 0 00-2-2h-2m-6 9H9a2 2 0 00-2 2v2a2 2 0 002 2h2m-6 9h14a2 2 0 002-2v-2a2 2 0 00-2-2h-2" />
+            </svg>
           </div>
+          <span className={`px-3 py-1 text-xs font-semibold text-white rounded-full ${difficultyColors[scenario.difficulty]}`}>
+            {difficultyLabels[scenario.difficulty]}
+          </span>
+        </div>
 
-          <h4 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors line-clamp-2">
-            {scenario.title}
-          </h4>
-          <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-            {scenario.description}
-          </p>
+        <h4 className="text-base font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors line-clamp-2">
+          {scenario.title}
+        </h4>
+        <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+          {scenario.description}
+        </p>
 
-          <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
+        <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
             <div className="flex items-center">
               <svg className="w-4 h-4 mr-1 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -520,25 +448,24 @@ function ScenarioCard({ scenario }: { scenario: any }) {
             </div>
           </div>
 
-          <div className="border-t border-purple-100 pt-4 mb-4">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-3 shadow-md">
-                <span className="text-white font-semibold">
-                  {scenario.clientPersona.name.charAt(0)}
-                </span>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-gray-800">{scenario.clientPersona.name}</p>
-                <p className="text-xs text-gray-500">{scenario.clientPersona.role}, {scenario.clientPersona.company}</p>
-              </div>
+        <div className="border-t border-slate-200 pt-4 mb-4">
+          <div className="flex items-center">
+            <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+              <span className="text-purple-700 font-semibold text-sm">
+                {scenario.clientPersona.name.charAt(0)}
+              </span>
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-gray-900">{scenario.clientPersona.name}</p>
+              <p className="text-xs text-gray-500">{scenario.clientPersona.role}, {scenario.clientPersona.company}</p>
             </div>
           </div>
+        </div>
 
-          <div className="mt-4">
-            <button className={`w-full bg-gradient-to-r ${gradientColors[scenario.difficulty]} hover:opacity-90 text-white font-semibold py-3 px-4 rounded-xl transition-all shadow-md hover:shadow-lg btn-itsm`}>
-              Начать тренировку →
-            </button>
-          </div>
+        <div className="mt-4">
+          <button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors">
+            Начать тренировку →
+          </button>
         </div>
       </div>
     </Link>
