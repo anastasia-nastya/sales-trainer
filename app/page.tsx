@@ -7,13 +7,13 @@ export default function Home() {
   const negotiations = getScenariosByType('negotiation');
 
   return (
-    <div className="min-h-screen bg-[#F0F7FF]">
-      <header className="bg-white border-b border-[#E5E7EB]">
+    <div style={{minHeight: '100vh', backgroundColor: '#F0F7FF'}}>
+      <header style={{backgroundColor: '#FFFFFF', borderBottom: '1px solid #E5E7EB'}}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[#2563EB] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">IT</span>
+              <div style={{width: '40px', height: '40px', backgroundColor: '#2563EB', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                <span style={{color: '#FFFFFF', fontWeight: 'bold', fontSize: '18px'}}>IT</span>
               </div>
               <div>
                 <h1 className="text-lg font-bold text-black">ITSM 365</h1>
@@ -40,8 +40,8 @@ export default function Home() {
 
         <section className="mb-12">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 bg-[#2563EB] rounded-lg flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div style={{width: '48px', height: '48px', backgroundColor: '#2563EB', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <svg style={{width: '24px', height: '24px', color: '#FFFFFF'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
             </div>
@@ -59,8 +59,8 @@ export default function Home() {
 
         <section className="mb-12">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 bg-[#2563EB] rounded-lg flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div style={{width: '48px', height: '48px', backgroundColor: '#2563EB', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <svg style={{width: '24px', height: '24px', color: '#FFFFFF'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
@@ -78,8 +78,8 @@ export default function Home() {
 
         <section>
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 bg-[#2563EB] rounded-lg flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div style={{width: '48px', height: '48px', backgroundColor: '#2563EB', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <svg style={{width: '24px', height: '24px', color: '#FFFFFF'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
@@ -96,8 +96,8 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-white border-t border-[#E5E7EB] py-8 mt-12">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+      <footer style={{backgroundColor: '#FFFFFF', borderTop: '1px solid #E5E7EB', padding: '32px 16px', marginTop: '48px'}}>
+        <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm text-[#6B7280]">© 2024 ITSM 365. Все права защищены.</p>
         </div>
       </footer>
@@ -107,22 +107,38 @@ export default function Home() {
 
 function ScenarioCard({ scenario }: { scenario: any }) {
   const difficultyConfig = {
-    beginner: { label: 'Начальный', color: 'bg-[#10B981]' },
-    intermediate: { label: 'Средний', color: 'bg-[#F59E0B]' },
-    advanced: { label: 'Продвинутый', color: 'bg-[#EF4444]' },
+    beginner: { label: 'Начальный', color: '#10B981' },
+    intermediate: { label: 'Средний', color: '#F59E0B' },
+    advanced: { label: 'Продвинутый', color: '#EF4444' },
   };
   const difficulty = difficultyConfig[scenario.difficulty as keyof typeof difficultyConfig];
 
   return (
     <Link href={`/scenarios/${scenario.id}`} className="block">
-      <div className="bg-white rounded-lg p-6 border border-[#E5E7EB] hover:shadow-md transition-shadow">
+      <div style={{
+        backgroundColor: '#FFFFFF',
+        border: '1px solid #E5E7EB',
+        borderRadius: '8px',
+        padding: '24px',
+        transition: 'box-shadow 0.2s',
+        cursor: 'pointer'
+      }}
+      className="hover:shadow-md"
+      >
         <div className="flex items-start justify-between mb-4">
-          <div className="w-12 h-12 bg-[#2563EB] rounded-lg flex items-center justify-center">
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div style={{width: '48px', height: '48px', backgroundColor: '#2563EB', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <svg style={{width: '24px', height: '24px', color: '#FFFFFF'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H5m14 0a2 2 0 002 2v-2a2 2 0 00-2-2h-2m-6 9h14a2 2 0 002-2v-2a2 2 0 00-2-2h-2m-6 9H9a2 2 0 00-2 2v2a2 2 0 002 2h2m-6 9h14a2 2 0 002-2v-2a2 2 0 00-2-2h-2" />
             </svg>
           </div>
-          <span className={`px-3 py-1 text-xs font-semibold text-white rounded-full ${difficulty.color}`}>
+          <span style={{
+            padding: '4px 12px',
+            backgroundColor: difficulty.color,
+            color: '#FFFFFF',
+            fontSize: '12px',
+            fontWeight: '600',
+            borderRadius: '9999px'
+          }}>
             {difficulty.label}
           </span>
         </div>
@@ -137,23 +153,23 @@ function ScenarioCard({ scenario }: { scenario: any }) {
 
         <div className="flex items-center gap-4 mb-4 text-sm text-[#6B7280]">
           <div className="flex items-center gap-1">
-            <svg className="w-4 h-4 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg style={{width: '16px', height: '16px', color: '#2563EB'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             {scenario.duration} мин
           </div>
           <div className="flex items-center gap-1">
-            <svg className="w-4 h-4 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg style={{width: '16px', height: '16px', color: '#10B981'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             {scenario.objectives?.length} критерия успеха
           </div>
         </div>
 
-        <div className="border-t border-[#E5E7EB] pt-4 mb-4">
+        <div style={{borderTop: '1px solid #E5E7EB', paddingTop: '16px', marginBottom: '16px'}}>
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#EFF6FF] rounded-full flex items-center justify-center">
-              <span className="text-sm font-semibold text-[#2563EB]">
+            <div style={{width: '40px', height: '40px', backgroundColor: '#EFF6FF', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <span style={{fontSize: '14px', fontWeight: '600', color: '#2563EB'}}>
                 {scenario.clientPersona.name.charAt(0)}
               </span>
             </div>
@@ -164,7 +180,20 @@ function ScenarioCard({ scenario }: { scenario: any }) {
           </div>
         </div>
 
-        <button className="w-full py-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold rounded-lg transition-colors">
+        <button style={{
+          width: '100%',
+          padding: '12px 16px',
+          backgroundColor: '#2563EB',
+          color: '#FFFFFF',
+          fontSize: '16px',
+          fontWeight: '600',
+          borderRadius: '8px',
+          border: 'none',
+          cursor: 'pointer',
+          transition: 'backgroundColor 0.2s'
+        }}
+        className="hover:bg-[#1D4ED8]"
+        >
           Начать тренировку
         </button>
       </div>
