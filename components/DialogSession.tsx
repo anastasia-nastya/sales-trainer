@@ -337,10 +337,10 @@ export function DialogSession({
             {/* Кнопка управления звуком */}
             <button
               onClick={() => setVoiceEnabled(!voiceEnabled)}
-              className={`p-2 rounded-lg transition-colors ${
+              className={`p-2.5 rounded-xl transition-all duration-200 shadow-md ${
                 voiceEnabled
-                  ? 'bg-green-500/30 text-white hover:bg-green-500/50'
-                  : 'bg-gray-500/30 text-gray-300 hover:bg-gray-500/50'
+                  ? 'bg-gradient-to-br from-green-500/90 to-green-600/90 text-white hover:from-green-500 hover:to-green-600 hover:shadow-lg hover:scale-105'
+                  : 'bg-gradient-to-br from-gray-500/90 to-gray-600/90 text-gray-300 hover:from-gray-500 hover:to-gray-600 hover:shadow-lg'
               }`}
               title={voiceEnabled ? 'Выключить звук' : 'Включить звук'}
             >
@@ -368,9 +368,9 @@ export function DialogSession({
             </button>
             <button
               onClick={handleComplete}
-              className="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-colors"
+              className="bg-gradient-to-r from-white/95 to-white/90 hover:from-white hover:to-white/95 px-5 py-2.5 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg text-blue-900 font-semibold hover:scale-105 active:scale-95"
             >
-              Завершить и получить оценку
+              🎯 Завершить и получить оценку
             </button>
           </div>
         </div>
@@ -469,10 +469,10 @@ export function DialogSession({
           <button
             onClick={isRecording ? stopRecording : startRecording}
             disabled={isProcessing}
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${
+            className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-200 shadow-lg ${
               isRecording
-                ? 'bg-red-500 hover:bg-red-600 text-white'
-                : 'bg-blue-600 hover:bg-blue-700 text-white'
+                ? 'bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white shadow-red-500/30 hover:shadow-xl hover:scale-105 active:scale-95'
+                : 'bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-blue-500/30 hover:shadow-xl hover:scale-105 active:scale-95'
             } ${isProcessing ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
             {isRecording ? (
@@ -492,14 +492,14 @@ export function DialogSession({
               value={transcript}
               onChange={(e) => setTranscript(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSubmit()}
-              placeholder={isRecording ? 'Говорите...' : 'Введите сообщение или нажмите микрофон...'}
-              className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white"
+              placeholder={isRecording ? '🎤 Говорите...' : '💬 Введите сообщение или нажмите микрофон...'}
+              className="w-full px-5 py-3.5 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 shadow-inner transition-all duration-200"
               disabled={isProcessing}
             />
             {isRecording && (
-              <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2 bg-red-500/10 px-3 py-1.5 rounded-full">
                 <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                <span className="text-xs text-gray-500">Запись...</span>
+                <span className="text-xs text-red-600 dark:text-red-400 font-medium">Запись...</span>
               </div>
             )}
           </div>
@@ -507,7 +507,7 @@ export function DialogSession({
           <button
             onClick={handleSubmit}
             disabled={!transcript.trim() || isProcessing}
-            className="w-12 h-12 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 dark:disabled:bg-gray-600 text-white rounded-xl flex items-center justify-center transition-colors"
+            className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 disabled:from-gray-300 disabled:to-gray-400 dark:disabled:from-gray-600 dark:disabled:to-gray-700 text-white rounded-2xl flex items-center justify-center transition-all duration-200 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:shadow-md"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />

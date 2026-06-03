@@ -79,8 +79,11 @@ export default function ProfilePage() {
                   <p className="text-gray-600 dark:text-gray-400 mb-1">{mockProfile.role}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-500">{mockProfile.company} • {mockProfile.department}</p>
                 </div>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors">
-                  Редактировать профиль
+                <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium py-2.5 px-5 rounded-xl transition-all duration-200 shadow-lg shadow-blue-500/30 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                  </svg>
+                  <span>Редактировать профиль</span>
                 </button>
               </div>
 
@@ -190,8 +193,11 @@ export default function ProfilePage() {
 
         {/* Account Actions */}
         <div className="mt-8 flex justify-center gap-4">
-          <button className="bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
-            Выйти из аккаунта
+          <button className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-medium py-3 px-6 rounded-xl transition-all duration-200 shadow-lg shadow-red-500/30 hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
+            <span>Выйти из аккаунта</span>
           </button>
         </div>
       </main>

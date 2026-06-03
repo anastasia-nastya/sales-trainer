@@ -258,8 +258,8 @@ export default function DashboardPage() {
         {/* Call to Action */}
         <div className="mt-8 text-center">
           <Link href="/">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all">
-              Продолжить тренировку
+            <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold text-lg py-4 px-8 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95">
+              🚀 Продолжить тренировку
             </button>
           </Link>
         </div>
