@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+      <header className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3">
@@ -21,11 +21,14 @@ export default function Home() {
                 <p className="text-xs text-gray-500">Тренажёр менеджеров по продажам</p>
               </div>
             </Link>
-            <nav className="flex items-center gap-6">
-              <Link href="/dashboard" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">📊 Дашборд</Link>
-              <Link href="/history" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">📜 История</Link>
-              <Link href="/profile" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">👤 Профиль</Link>
-              <Link href="/resources" className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-blue-800 transition-all shadow-md hover:shadow-lg">
+            <nav className="flex items-center gap-3">
+              <Link href="/dashboard" className="px-4 py-2 text-gray-600 hover:text-blue-600 font-medium transition-colors rounded-lg hover:bg-blue-50">
+                📊 Дашборд
+              </Link>
+              <Link href="/history" className="px-4 py-2 text-gray-600 hover:text-blue-600 font-medium transition-colors rounded-lg hover:bg-blue-50">
+                📜 История
+              </Link>
+              <Link href="/resources" className="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-medium hover:from-blue-700 hover:to-blue-800 transition-all shadow-md hover:shadow-lg">
                 📚 Ресурсы
               </Link>
             </nav>
@@ -37,7 +40,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-6 shadow-sm">
               <span className="text-xl">🎯</span>
               <span className="text-sm font-semibold">AI-тренажёр B2B продаж</span>
             </div>
@@ -45,14 +48,14 @@ export default function Home() {
               Мастер продаж<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">начинается здесь</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
               Практикуйте навыки B2B продаж с AI-клиентами в реалистичных сценариях.
               Отработка встреч, работа с возражениями, переговоры — всё в одном тренажёре.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="#scenarios"
-                className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:scale-105 active:scale-95 flex items-center gap-3"
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:scale-105 active:scale-95"
               >
                 <span>Начать тренировку</span>
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,7 +64,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/resources"
-                className="bg-white text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all border-2 border-gray-200 hover:border-blue-300 hover:shadow-lg flex items-center gap-2"
+                className="inline-flex items-center gap-3 bg-white text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all border-2 border-gray-200 hover:border-blue-300 hover:shadow-lg"
               >
                 <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -151,13 +154,13 @@ export default function Home() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="#scenarios"
-              className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:shadow-2xl hover:scale-105 active:scale-95 flex items-center gap-2"
+              className="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:shadow-2xl hover:scale-105 active:scale-95"
             >
               <span>🚀 Начать сейчас</span>
             </Link>
             <Link
               href="/dashboard"
-              className="bg-transparent text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all border-2 border-white/30 hover:bg-white/10 flex items-center gap-2"
+              className="inline-flex items-center gap-3 bg-transparent text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all border-2 border-white/30 hover:bg-white/10"
             >
               <span>📊 Посмотреть дашборд</span>
             </Link>
@@ -217,7 +220,7 @@ function StatWidget({ icon, label, value, color }: { icon: string; label: string
   };
 
   return (
-    <div className={`bg-gradient-to-br ${colorClasses[color as keyof typeof colorClasses]} rounded-2xl p-6 text-white shadow-xl hover:shadow-2xl transition-all hover:scale-105`}>
+    <div className={`bg-gradient-to-br ${colorClasses[color as keyof typeof colorClasses]} rounded-2xl p-6 text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300`}>
       <div className="text-3xl mb-2">{icon}</div>
       <div className="text-3xl font-bold mb-1">{value}</div>
       <div className="text-sm opacity-90">{label}</div>
@@ -233,8 +236,8 @@ function FeatureCard({ icon, title, description, color }: { icon: string; title:
   };
 
   return (
-    <div className="group p-6 rounded-xl hover:shadow-xl transition-all hover:scale-105 border border-gray-100">
-      <div className={`w-14 h-14 ${colorClasses[color as keyof typeof colorClasses]} rounded-2xl flex items-center justify-center text-2xl mb-4`}>
+    <div className="group p-6 rounded-xl hover:shadow-xl transition-all hover:scale-105 border border-gray-100 bg-white">
+      <div className={`w-14 h-14 ${colorClasses[color as keyof typeof colorClasses]} rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform`}>
         {icon}
       </div>
       <h3 className="text-lg font-bold text-gray-900 mb-2">{title}</h3>
@@ -285,8 +288,8 @@ function ScenarioCard({ scenario }: { scenario: any }) {
   const difficulty = difficultyConfig[scenario.difficulty as keyof typeof difficultyConfig];
 
   return (
-    <Link href={`/scenarios/${scenario.id}`} className="block">
-      <div className="bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-blue-300 hover:shadow-2xl transition-all group h-full flex flex-col">
+    <Link href={`/scenarios/${scenario.id}`} className="block group">
+      <div className="bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-blue-300 hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
