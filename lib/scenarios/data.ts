@@ -245,7 +245,7 @@ export const scenarios: Scenario[] = [
       name: 'Виктор Тихонов',
       role: 'Финансовый директор',
       company: 'ЛогистикПро',
-      personality: 'Ценовой, ориентирован на цифры, sceptical',
+      personality: 'Ценовой, ориентирован на цифры, скептически настроен',
       painPoints: [
         'Ограниченный бюджет',
         'Давление со стороны собственников на оптимизацию',
@@ -470,19 +470,19 @@ export const scenarios: Scenario[] = [
   // СПЕЦИАЛЬНЫЕ СЦЕНАРИИ (разные уровни сложности)
   // ========================================
 
-  // Сценарий для разных уровней LPR
+  // Сценарий для разных уровней ЛПР
   {
     id: 'mid-level-manager',
     title: 'Презентация для IT Manager (средний уровень)',
-    description: 'Работа с IT Manager, который не является LPR, но влияет на решение.',
+    description: 'Работа с IT Manager, который не является ЛПР, но влияет на решение.',
     type: 'meeting',
     difficulty: 'beginner',
     duration: 15,
     objectives: [
       'Понять роль и влияние менеджера',
       'Дать простую и понятную презентацию',
-      'Получить champion внутри организации',
-      'Создать путь к LPR'
+      'Получить сторонника внутри организации',
+      'Создать путь к ЛПР'
     ],
     clientPersona: {
       name: 'Сергей Новиков',
@@ -509,7 +509,7 @@ export const scenarios: Scenario[] = [
       { skill: 'Упрощение', description: 'Простые объяснения для не-технаря', weight: 30 },
       { skill: 'Пользы', description: 'Акцент на быстрый результат', weight: 30 },
       { skill: 'Champion', description: 'Создание союзника внутри', weight: 20 },
-      { skill: 'Путь к LPR', description: 'Следующий шаг к Директору', weight: 20 }
+      { skill: 'Путь к ЛПР', description: 'Следующий шаг к Директору', weight: 20 }
     ]
   },
 
@@ -620,7 +620,7 @@ export function getScenariosByBudget(maxBudget: number): Scenario[] {
   });
 }
 
-// Получить сценарий по роли LPR
+// Получить сценарий по роли ЛПР
 export function getScenariosByRole(role: string): Scenario[] {
   const roleKeywords: Record<string, string[]> = {
     'CIO': ['CIO', 'IT Director', 'CTO'],
@@ -711,7 +711,7 @@ export function getScenariosByPainPoint(painPoint: string): Scenario[] {
   );
 }
 
-// Получить сценарии для LPR
+// Получить сценарии для ЛПР
 export function getDecisionMakerScenarios(): Scenario[] {
   return scenarios.filter(s => s.clientPersona.decisionMaker === true);
 }
